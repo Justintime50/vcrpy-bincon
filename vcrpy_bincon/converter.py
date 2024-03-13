@@ -6,7 +6,7 @@ import re
 
 import ruamel.yaml
 
-CASSETTE_DIR = os.env("CASSETTE_DIR")
+CASSETTE_DIR = os.getenv("CASSETTE_DIR")
 
 
 def main():
