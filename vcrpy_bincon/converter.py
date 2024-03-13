@@ -3,24 +3,24 @@ import gzip
 import json
 import os
 import re
+import sys
 
 import ruamel.yaml
 
-CASSETTE_DIR = os.getenv("CASSETTE_DIR")
+CASSETTE_DIR = sys.argv[1]
 
 
 def main():
     for filename in os.listdir(CASSETTE_DIR):
         if filename.endswith(".yaml") or filename.endswith(".yml"):
-            filepath = os.path.join(CASSETTE_DIR, filename)
             yaml = ruamel.yaml.YAML()
+            filepath = os.path.join(CASSETTE_DIR, filename)
+
             with open(filepath, "r") as file:
                 file_contents = file.read()
                 if "!!binary |" not in file_contents:
                     continue
-                data = re.sub(
-                    r"!!binary \|", "", file_contents
-                )  # pre-process the yaml to get the original binary string
+                data = re.sub(r"!!binary \|", "", file_contents)  # pre-process the yaml to get the original binary
                 yaml_content = yaml.load(data)
                 interactions = yaml_content.get("interactions", [])
 
@@ -41,8 +41,8 @@ def main():
                             yaml_content["interactions"][index]["response"]["body"]["string"] = converted_string
                             print(f"Converted binary string for {filepath}")
 
-                with open(filepath, "w") as file:
-                    yaml.dump(yaml_content, file)
+            with open(filepath, "w") as file:
+                yaml.dump(yaml_content, file)
 
 
 if __name__ == "__main__":

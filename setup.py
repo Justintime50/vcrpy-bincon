@@ -27,6 +27,7 @@ DEV_REQUIREMENTS = [
     'pytest == 8.*',
     'pytest-cov == 4.*',
     'twine == 5.*',
+    'vcrpy == 6.*',
 ]
 
 setuptools.setup(
