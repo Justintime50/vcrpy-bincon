@@ -60,7 +60,7 @@ setuptools.setup(
     },
     entry_points={
         'console_scripts': [
-            'vcrpy-bincon=vcrpy_bincon.converter:main',
+            'vcrpy-bincon=vcrpy_bincon.converter:convert_binary',
         ]
     },
     python_requires='>=3.8, <4',
