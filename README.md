@@ -17,6 +17,7 @@ VCR cassette responses often get saved as binary instead of a human-readable str
 
 ```yaml
 # Takes something like the following from a vcrpy cassette:
+interactions:
   response:
     body:
       string: !!binary |
@@ -28,6 +29,7 @@ VCR cassette responses often get saved as binary instead of a human-readable str
         5fILAAD//wMAxbg+BbcBAAA=
 
 # And turns it into this:
+interactions:
   response:
     body:
       string: '{"id": "adr_8bda753a647111eeab7802fb85ae3091", "object": "Address",
