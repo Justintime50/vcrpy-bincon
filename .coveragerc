@@ -1,5 +1,5 @@
 [report]
 exclude_lines =
-    if __name__ == '__main__':
+    if __name__ == "__main__":
 [run]
 omit = vcrpy_bincon/_version.py

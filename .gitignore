@@ -4,6 +4,7 @@ __pycache__
 .env
 *.egg-info
 *.lcov
+cassettes
 dist
 htmlcov
 venv

@@ -1,20 +1,19 @@
+import argparse
 import base64
 import gzip
 import json
 import os
 import re
-import sys
 
 import ruamel.yaml
 
-CASSETTE_DIR = sys.argv[1]
 
-
-def main():
-    for filename in os.listdir(CASSETTE_DIR):
+def convert_binary(cassette_dir: str) -> None:
+    """Converts compressed, binary VCR responses into human-readable strings."""
+    for filename in os.listdir(cassette_dir):
         if filename.endswith(".yaml") or filename.endswith(".yml"):
             yaml = ruamel.yaml.YAML()
-            filepath = os.path.join(CASSETTE_DIR, filename)
+            filepath = os.path.join(cassette_dir, filename)
 
             with open(filepath, "r") as file:
                 file_contents = file.read()
@@ -46,4 +45,13 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description='Convert binary Python VCR cassette responses to human-readable strings.'
+    )
+    parser.add_argument(
+        'cassette_path',
+        type=str,
+        help="The path to the VCR cassette directory.",
+    )
+    args = parser.parse_args()
+    convert_binary(args.cassette_path)

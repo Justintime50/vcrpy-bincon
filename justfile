@@ -22,7 +22,7 @@ black-check:
 
 # Test the project and generate an HTML coverage report
 coverage:
-    {{VIRTUAL_BIN}}/pytest --cov={{PROJECT_NAME}} --cov-branch --cov-report=html --cov-report=lcov --cov-report=term-missing --cov-fail-under=90
+    {{VIRTUAL_BIN}}/pytest --cov={{PROJECT_NAME}} --cov-branch --cov-report=html --cov-report=lcov --cov-report=term-missing --cov-fail-under=95
 
 # Cleans the project
 clean:
