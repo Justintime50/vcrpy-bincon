@@ -44,7 +44,8 @@ def convert_binary(cassette_dir: str) -> None:
                 yaml.dump(yaml_content, file)
 
 
-if __name__ == "__main__":
+def _cli():
+    """Runs the tool from the CLI."""
     parser = argparse.ArgumentParser(
         description='Convert binary Python VCR cassette responses to human-readable strings.'
     )
@@ -55,3 +56,7 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     convert_binary(args.cassette_path)
+
+
+if __name__ == "__main__":
+    _cli()
