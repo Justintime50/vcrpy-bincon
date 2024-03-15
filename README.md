@@ -45,7 +45,7 @@ interactions:
 
 ```bash
 # Install tool
-pip3 install vcrpy_bincon
+pip3 install vcrpy-bincon
 
 # Install locally
 just install
