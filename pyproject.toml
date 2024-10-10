@@ -7,4 +7,4 @@ skip-string-normalization = true
 profile = "black"
 
 [tool.mypy]
-ignore_missing_imports = true
+disable_error_code = "import-untyped"
