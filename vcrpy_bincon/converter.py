@@ -5,7 +5,7 @@ import json
 import os
 import re
 
-import ruamel.yaml  # type: ignore
+import ruamel.yaml
 
 
 def convert_binary(cassette_dir: str) -> None:
