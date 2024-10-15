@@ -5,14 +5,14 @@ import json
 import os
 import re
 
-import ruamel.yaml
+from ruamel.yaml import YAML
 
 
 def convert_binary(cassette_dir: str) -> None:
     """Converts compressed, binary VCR responses into human-readable strings."""
     for filename in os.listdir(cassette_dir):
         if filename.endswith(".yaml") or filename.endswith(".yml"):
-            yaml = ruamel.yaml.YAML()
+            yaml = YAML()
             filepath = os.path.join(cassette_dir, filename)
 
             with open(filepath, "r") as file:

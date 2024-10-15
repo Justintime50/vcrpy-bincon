@@ -16,3 +16,5 @@ use_parentheses = true
 
 [tool.mypy]
 disable_error_code = "import-untyped"
+# Needed to let mypy play nice with ruamel: https://stackoverflow.com/questions/52189217/use-mypy-with-ruamel-yaml
+ignore_missing_imports = true
