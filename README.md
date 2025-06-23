@@ -44,7 +44,11 @@ interactions:
 ## Install
 
 ```bash
-# Install tool
+# Homebrew install
+brew tap justintime50/formulas
+brew install vcrpy-bincon
+
+# Pip install
 pip3 install vcrpy-bincon
 
 # Install locally

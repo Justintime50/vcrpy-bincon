@@ -7,6 +7,8 @@ import re
 
 from ruamel.yaml import YAML
 
+from vcrpy_bincon._version import __version__
+
 
 def convert_binary(cassette_dir: str) -> None:
     """Converts compressed, binary VCR responses into human-readable strings."""
@@ -53,6 +55,11 @@ def _cli():
         'cassette_path',
         type=str,
         help="The path to the VCR cassette directory.",
+    )
+    parser.add_argument(
+        '--version',
+        action='version',
+        version=f'%(prog)s {__version__}',
     )
     args = parser.parse_args()
     convert_binary(args.cassette_path)
