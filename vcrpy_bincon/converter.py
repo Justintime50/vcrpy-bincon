@@ -49,17 +49,17 @@ def convert_binary(cassette_dir: str) -> None:
 def _cli():
     """Runs the tool from the CLI."""
     parser = argparse.ArgumentParser(
-        description='Convert binary Python VCR cassette responses to human-readable strings.'
+        description="Convert binary Python VCR cassette responses to human-readable strings."
     )
     parser.add_argument(
-        'cassette_path',
+        "cassette_path",
         type=str,
         help="The path to the VCR cassette directory.",
     )
     parser.add_argument(
-        '--version',
-        action='version',
-        version=f'%(prog)s {__version__}',
+        "--version",
+        action="version",
+        version=f"%(prog)s {__version__}",
     )
     args = parser.parse_args()
     convert_binary(args.cassette_path)

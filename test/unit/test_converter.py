@@ -82,16 +82,16 @@ def setup_test():
     os.makedirs(CASSETTE_DIR, exist_ok=True)
 
     # Create our valid test subject
-    with open(f"{CASSETTE_DIR}/test.yaml", 'w') as yaml_file:
+    with open(f"{CASSETTE_DIR}/test.yaml", "w") as yaml_file:
         yaml_file.write(YAML_CONTENT)
 
     # Setup a yaml file without binary
-    with open(f"{CASSETTE_DIR}/no_binary.yaml", 'w') as yaml_file:
+    with open(f"{CASSETTE_DIR}/no_binary.yaml", "w") as yaml_file:
         yaml_file.write(NO_BINARY_YAML_CONTENT)
 
     # Add non-yaml files
-    with open(f"{CASSETTE_DIR}/random.txt", 'w') as text_file:
-        text_file.write('random text that should get skipped since this is not a yaml file')
+    with open(f"{CASSETTE_DIR}/random.txt", "w") as text_file:
+        text_file.write("random text that should get skipped since this is not a yaml file")
 
     yield
     shutil.rmtree(CASSETTE_DIR)
@@ -101,7 +101,7 @@ def test_convert_binary():
     """Ensure we find content that only exists in a human-readable response and no binary yaml tags."""
     convert_binary(CASSETTE_DIR)
 
-    with open(f"{CASSETTE_DIR}/test.yaml", 'r') as yaml_file:
+    with open(f"{CASSETTE_DIR}/test.yaml", "r") as yaml_file:
         yaml_content = yaml_file.read()
 
     assert "adr_8bda753a647111eeab7802fb85ae3091" in yaml_content

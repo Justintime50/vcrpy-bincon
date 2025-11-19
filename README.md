@@ -5,7 +5,7 @@
 Convert binary Python VCR cassette responses to human-readable strings.
 
 [![Build Status](https://github.com/Justintime50/vcrpy-bincon/workflows/build/badge.svg)](https://github.com/Justintime50/vcrpy-bincon/actions)
-[![Coverage Status](https://coveralls.io/repos/github/Justintime50/vcrpy-bincon/badge.svg?branch=main)](https://coveralls.io/github/Justintime50/vcrpy-bincon?branch=main)
+[![Coverage Status](https://img.shields.io/codecov/c/github/justintime50/vcrpy-bincon)](https://app.codecov.io/github/Justintime50/vcrpy-bincon)
 [![PyPi](https://img.shields.io/pypi/v/vcrpy-bincon)](https://pypi.org/project/vcrpy-bincon)
 [![Licence](https://img.shields.io/github/license/Justintime50/vcrpy-bincon)](LICENSE)
 

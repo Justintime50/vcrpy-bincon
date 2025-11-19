@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v0.3.0 (2025-11-18)
+
+- Drops support for Python 3.8 and 3.9
+- Bumps deps
+
 ## v0.2.0 (2024-06-23)
 
 - Adds `--version` CLI command
