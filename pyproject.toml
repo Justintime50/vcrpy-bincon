@@ -1,3 +1,38 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vcrpy-bincon"
+description = "Convert binary Python VCR cassette responses to human-readable strings."
+dynamic = ["version"]
+readme = "README.md"
+requires-python = ">=3.10,<4"
+license = { text = "MIT" }
+authors = [{ name = "Justintime50" }]
+urls = { Homepage = "http://github.com/Justintime50/vcrpy-bincon" }
+scripts = { vcrpy-bincon = "vcrpy_bincon.converter:_cli" }
+dependencies = ["ruamel.yaml ==0.18.*"]
+optional-dependencies = { dev = [
+    "bandit ==1.9.*",
+    "black ==25.*",
+    "build ==1.3.*",
+    "flake8 ==7.*",
+    "isort ==7.*",
+    "mypy ==1.18.*",
+    "pytest ==9.*",
+    "pytest-cov ==7.*",
+] }
+
+[tool.setuptools.dynamic]
+version = { attr = "vcrpy_bincon._version.__version__" }
+
+[tool.setuptools.packages.find]
+exclude = ["examples", "test"]
+
+[tool.setuptools.package-data]
+vcrpy_bincon = ["py.typed"]
+
 [tool.black]
 line-length = 120
 
