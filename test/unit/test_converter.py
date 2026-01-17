@@ -5,7 +5,6 @@ import pytest
 
 from vcrpy_bincon.converter import convert_binary
 
-
 CASSETTE_DIR = "test/cassettes"
 YAML_CONTENT = """interactions:
 - request:
